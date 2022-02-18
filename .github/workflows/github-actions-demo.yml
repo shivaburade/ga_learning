@@ -15,6 +15,8 @@ jobs:
                 node-version: "14"
             - run: npm install -g bats
             - run: bats -v
+            - name: pull docker image
+            - run: docker pull ubuntu:18.04
             - run: echo "The repository - ${{ github.repository }} has been cloned to the runner"
             - run: echo "The workflow is now ready to test your code on the runner."
             - name: List all the files in the repository.
